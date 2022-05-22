@@ -1,0 +1,355 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font: normal 16px/1.5 400 'Arial' 'helvetica' 'sans-serif';
+    overflow: scroll;
+}
+
+li {
+    list-style: none;
+}
+
+/* 清楚浮动 */
+.clearfix::before,
+.clearfix::after {
+    content: " ";
+    display: table;
+}
+
+.clearfix::after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+/* 将所有div、p、span标签的鼠标样式设置为箭头 */
+div,
+p,
+span {
+    cursor: default;
+}
+
+/* 以下样式应用于所有输入框和下拉框 */
+.inputbox{
+    height: 44px;
+    padding: 0 10px;
+    border: 1px solid #d3d3dd;
+    font-size: 1em;
+}
+
+/* 所有输入框或下拉框获得焦点时边框变为蓝色 */
+.inputbox:focus {
+    outline: none;
+    border: 1px solid #45b0e6; 
+}
+
+/* 以下样式应用于所有连接 */
+a {
+    color: #2277d9;
+}
+
+/* 页眉 */
+header {
+    width: 100%;
+    background-color: #161616;
+}
+
+header .top-container {
+    width: 55%;
+    min-width: 700px;
+    margin: 0 auto;
+}
+
+header .top-container a {
+    float: left;
+}
+
+/* 去除图片底部空白 */
+header .top-container a img {
+    vertical-align: top;
+    margin-left: -35px;
+}
+
+header .top-container span {
+    float: right;
+    margin-top: 25px;
+    margin-right: 10px;
+}
+
+header .top-container select {
+    float: right;
+    width: 200px;
+    margin-top: 15px;
+}
+
+/* 标题（JetBrains 学习产品） */
+.title {
+    width: 55%;
+    min-width: 700px;
+    margin: 50px auto 20px;
+    font-size: 2.4em;
+    font-weight: 700;
+}
+
+/* 在应用之前，请阅读教育订阅条款和常见问题解答。 */
+.introduction {
+    width: 55%;
+    min-width: 700px;
+    margin: 40px auto;
+    font-size: 1.25em;
+}
+
+/* 表单 */
+form {
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    width: 55%;
+    min-width: 700px;
+    margin: 0 auto;
+    padding: 50px 30px 30px;
+    color: #545454;
+    background-color: #f5f5f5;
+}
+
+/* 此样式应用于表单中所有类名为 item 的 div 标签 */
+form .item {
+    display: flex;
+    display: -webkit-flex;
+}
+
+/* 此样式应用于表单中所有类名为 lable 的 div 标签 */
+form .item .lable {
+    width: 25%;
+    padding-top: 10px;
+}
+
+/* 此样式应用于表单中所有类名为 fill 的 div 标签 */
+form .item .fill {
+    width: 75%;
+    padding-bottom: 16px;
+}
+
+/* 此样式应用于表单中所有类名为 emphasize 的 p 标签 */
+.emphasize {
+    margin: 10px 0 10px;
+}
+
+/* 申请方式选项 */
+form .item-way {
+    display: flex;
+    display: -webkit-flex;
+}
+form .item-way .lable {
+    width: 25%;
+    padding-top: 10px;
+}
+form .item-way .fill {
+    width: 75%;
+    padding-bottom: 16px;
+}
+form .item-way .fill .apply-way li {
+    display: block;
+    float: left;
+    position: relative;
+    border-bottom: 1px solid #d3d3d3;
+}
+
+form .item-way .fill .apply-way li a {
+    display: inline-block;
+    position: relative;
+    margin-top: 10px;
+    padding-bottom: 11px;
+    color: #777;
+    text-decoration: none;
+}
+
+form .item-way .fill .apply-way li:hover>a::after {
+    color: #2e2e2e;
+    border-bottom: 1px solid #2e2e2e;
+}
+
+form .item-way .fill .apply-way li a::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 0;
+    left: 0;
+    bottom: -1px;
+    border-bottom: 1px solid transparent;
+}
+
+/* 官方文件注册方式提示 */
+form .item .fill .file-tips {
+    margin-top: 20px;
+    color: #ab864f;
+}
+
+/* 状态、教育程度中的单选按钮 */
+form .item .fill .job {
+    margin-top: 10px;
+}
+
+form .item .fill .choise li,
+form .item .fill .job li {
+    margin-bottom: 10px;
+}
+
+/* 教育程度和国家地区的下拉框 */
+form .item .fill .edu,
+form .item .fill .cuntry {
+    width: 70%;
+}
+
+form .item .fill .cuntry {
+    margin-bottom: 20px;
+}
+
+/* 电子邮件 */
+form .item .fill .email {
+    width: 70%;
+}
+
+form .item .fill .tips {
+    font-size: 0.9em;
+}
+
+/* 姓、名 */
+form .item .fill .name {
+    width: 34.5%;
+    margin-bottom: 20px;
+}
+
+form .item .fill .more {
+    font-size: 0.8em;
+    color: #545454;
+}
+
+/* ISIC/ITIC */
+form .item .posi {
+    position: relative;
+}
+form .item .posi img {
+    position: absolute;
+    left: 47.5%;
+}
+
+/* 您的学术机构网站 */
+form .item .fill .web-addr {
+    display: block;
+    width: 70%;
+}
+form .item .fill .must {
+    margin-top: 30px;
+}
+form .item .fill .must-alert {
+    margin-top: 10px;
+    color: #bc635f;
+}
+
+/* 官方文件 */
+form .item .file-img {
+    position: relative;
+    width: 50%;
+    margin-top: 10px;
+}
+form .item .file-img .file-logintips {
+    position: absolute;
+    width: 200px;
+    font-size: 10px;
+    right: -200px;
+}
+form .item .file-img .file-logintips p {
+    margin-bottom: 5px;
+}
+form .item .file-img .file-logintips>div>img {
+    float: left;
+}
+
+/* 注释文本域 */
+form .item .fill .area {
+    width: 70%;
+    height: 100px;
+    border: 1px solid #d3d3d3;
+}
+form .item .fill .area:focus {
+    outline: none;
+    border: 1px solid #45b0e6;
+}
+
+/* 复选框 */
+form .item .fill .checkbox-span{
+    display: block;
+    margin-top: 15px;
+}
+
+/* 按钮 */
+.button {
+    width: 25%;
+    height: 50px;
+    margin-top: 25px;
+    border: none;
+    border-radius: 25px;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    background-color: #3ea2fd;
+}
+
+.button:hover {
+    background-color: #398fe0;
+}
+
+/* 通过 GITHUB 注册 */
+form .item-git {
+    display: flex;
+    display: -webkit-flex;
+    font-display: row;
+    margin-top: 30px;;
+}
+
+form .item-git .lable-img {
+    width: 25%;
+}
+
+form .item-git .lable-img img {
+    float: right;
+    margin-top: 20px;
+    margin-right: 40px;
+}
+
+form .item-git .fill-content {
+    width: 75%;
+}
+
+form .item-git .fill-content p {
+    margin-bottom: 20px;
+}
+
+form .item-git .fill-content p:last-child {
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+
+/* 页脚 */
+footer div {
+    width: 55%;
+    margin: 50px auto 30px;
+    color: #777;
+    font-size: 0.8em;
+}
+
+footer div a {
+    color: #777;
+}
+
+footer div a:hover {
+    color: #2277d9;
+}
