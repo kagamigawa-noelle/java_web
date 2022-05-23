@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JetBrains 学习产品</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<!-- 页眉 -->
+<header>
+    <div class="top-container clearfix">
+        <!-- logo -->
+        <a href="https://www.jetbrains.com.cn/idea/download/#section=windows" target="_blank">
+            <img src="./image/logo.png" alt="JetBrains">
+        </a>
+        <!-- 语言选择框 -->
+        <select class="inputbox" name="lang">
+            <option value="" selected>简体中文</option>
+            <option value="">繁体中文</option>
+            <option value="">English</option>
+        </select>
+        <!-- 语言标志 -->
+        <span><img src="./image/lang.png" alt=""></span>
+    </div>
+</header>
+<!-- 标题 -->
+<div class="title" >JetBrains 学习产品</div>
+<!-- 常见问题解答 -->
+<p class="introduction">在应用之前，<a href="https://www.jetbrains.com/community/education/#students" target="_blank">请阅读教育订阅条款和常见问题解答。</a></p>
+<!-- 表单 -->
+<form action="/application_practise_war_exploded/RequestForwardServlet" method="post">
+    <!-- 申请方式 -->
+    <div class="item-way">
+        <div class="lable">申请方式:</div>
+        <div class="fill">
+            <ul class="apply-way" name="applicationMethod">
+                <li><a href="javascript:void(0)" id="email-addr">大学电子邮件地址</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                <li><a href="javascript:void(0)" id="isic-member">ISIC/ITIC 成员</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                <li><a href="javascript:void(0)" id="official-file">官方文件</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                <li><a href="javascript:void(0)" id="github">GitHub</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- 官方文件注册方式提示 -->
+    <div class="item" id="file-alert">
+        <div class="lable"></div>
+        <div class="fill">
+            <p class="file-tips">您的申请和正式文件将由真人审查。<br>处理时间大概需要两周。</p>
+            <p class="file-tips">要立即获得免费许可证，请考虑选择其他申请方式。</p>
+        </div>
+    </div>
+    <!-- 状态 -->
+    <div class="item">
+        <div class="lable">状态:</div>
+        <div class="fill">
+            <ul class="job" name="status">
+                <li><input type="radio" name="job" id="stu" checked value="student"><label for="stu">&nbsp;我是学生</label></li>
+                <li><input type="radio" name="job" id="tea" value="teacher"><label for="tea">&nbsp;我是教师</label></li>
+            </ul>
+        </div>
+    </div>
+    <!-- 教育程度 -->
+    <div class="item" id="edu-box">
+        <div class="lable">教育程度:</div>
+        <div class="fill">
+            <select class="inputbox edu" name="educationLevel">
+                <option value="college" selected>大学生</option>
+                <option value="middle_school" >中学(初中或高中)</option>
+                <option value="vocational" >职业教育</option>
+                <option value="postgraduate" >硕士研究生/博士研究生</option>
+            </select>
+            <p class="emphasize">计算机科学或工程学是您的主要研究领域吗?</p>
+            <ul class="choise">
+                <li><input type="radio" name="research_area" id="yes" checked value="computer"><label for="yes">&nbsp;
+                    是</label></li>
+                <li><input type="radio" name="research_area" id="no" value="none_computer"><label for="no">&nbsp;
+                    否</label></li>
+            </ul>
+        </div>
+    </div>
+    <!-- 电子邮件地址 -->
+    <div class="item">
+        <div class="lable">电子邮件地址:</div>
+        <div class="fill">
+            <input type="text" name="email_address" class="inputbox email" placeholder="大学电子邮件地址，如js@mit.edu">
+            <p class="emphasize tips">本人保证以上提供的大学电子邮件地址有效并且属于本人。</p>
+        </div>
+    </div>
+    <!-- 姓名 -->
+    <div class="item">
+        <div class="lable">姓名:</div>
+        <div class="fill">
+            <p class="emphasize">您的护照、驾驶执照或其他合法证件上显示的<b>真名</b>。</p>
+            <input type="text" placeholder="名" class="inputbox name" name="first_name">
+            <input type="text" placeholder="姓" class="inputbox name" name="last_name">
+        </div>
+    </div>
+    <!-- 国家/地区 -->
+    <div class="item">
+        <div class="lable">国家/地区:</div>
+        <div class="fill">
+            <select class="inputbox cuntry" name="country">
+                <option value="mainlandChina" selected>中国大陆</option>
+                <option value="taiwan" >中国台湾</option>
+                <option value="japan" >日本</option>
+                <option value="USA" >美国</option>
+                <option value="Russia" >俄罗斯</option>
+                <option value="German" >德国</option>
+                <option value="Korea" >韩国</option>
+            </select>
+        </div>
+    </div>
+    <!-- ISIC/ITIC姓名 -->
+    <div class="item" id="isic-name">
+        <div class="lable">ISIC/ITIC&nbsp;姓名</div>
+        <div class="fill posi">
+            <img src="./image/ID.png" alt="">
+            <input type="text" class="inputbox">
+            <p class="emphasize tips">卡片上显示的您的姓名（如 B. Smart）。</p>
+        </div>
+    </div>
+    <!-- ISIC/ITICID -->
+    <div class="item" id="isic-id">
+        <div class="lable">ISIC/ITIC&nbsp;ID</div>
+        <div class="fill">
+            <input type="text" class="inputbox">
+            <p class="emphasize tips">您的 ISIC/ITIC 序列号（如 S123456789012X）。</p>
+        </div>
+    </div>
+    <!-- 出生日期 -->
+    <div class="item" id="born-date">
+        <div class="lable">出生日期:</div>
+        <div class="fill">
+            <input type="date" class="inputbox" name="birthday">
+        </div>
+    </div>
+    <!-- 您的学术机构的名称： -->
+    <div class="item" id="science-name">
+        <div class="lable">您的学术机构的名称:</div>
+        <div class="fill">
+            <input type="text" class="inputbox email" name="institute_name">
+        </div>
+    </div>
+    <!-- 您的学术机构的网站： -->
+    <div class="item" id="science-web">
+        <div class="lable">您的学术机构的网站:</div>
+        <div class="fill">
+            <input type="text" class="inputbox web-addr" placeholder="http://myschool.edu" name="institute_webSite">
+            <input type="checkbox" class="must" id="c1" name="diploma_confirmed">&nbsp;我就读的教育机构提供高等教育并颁发国家认可的文凭<br>
+            <p class="must-alert" id="p1">这是必填字段</p>
+            <input type="checkbox" class="must" id="c2" name="need_one_year">&nbsp;我参加的教育课程需要一年或更长时间的全日制学习来完成<br>
+            <p class="must-alert" id="p2">这是必填字段</p>
+        </div>
+    </div>
+    <!-- 官方文件： -->
+    <div class="item" id="science-file">
+        <div class="lable">官方文件:</div>
+        <div class="fill file-img">
+            <div class="file-logintips">
+                <p>我们需要您提供最近6个月的注册信息或成绩单。</p>
+                <p>该文件必须包含：您的姓名、学生证号、日期等信息</p>
+                <div>
+                    <img src="./image/form.png" alt="">
+                    <p>
+                        您还可以使用<a href="">chsi.com.cn</a>的学校状态验证报告。<br>
+                        <a href="">他是什么样的</a>
+                    </p>
+                </div>
+            </div>
+            <input type="file" class="file-area" name="reportFileName">
+            <p class="emphasize">添加任何证明您与您的学术机构有附属关系的正式文件<br>（如学生证），或提供可以找到此类信息的链接：</p>
+            <input type="text" class="inputbox email" name="reportFileLink">
+        </div>
+    </div>
+    <!-- 学信网报告在线验证码 -->
+    <div class="item" id="science-num">
+        <div class="lable">学信网报告在线验证码:</div>
+        <div class="fill">
+            <input type="text" class="inputbox email" name="reportCode">
+        </div>
+    </div>
+    <!-- 注释（可选） -->
+    <div class="item" id="note">
+        <div class="lable">注释（可选）:</div>
+        <div class="fill">
+            <textarea id="" cols="69" rows="5" class="area" name="comment"></textarea>
+        </div>
+    </div>
+    <!-- 我不满13 -->
+    <div class="item">
+        <div class="lable"></div>
+        <div class="fill">
+                <span class="checkbox-span">
+                    <input type="checkbox" id="age-ask" name="under13">&nbsp;我不到 13 岁
+                </span>
+        </div>
+    </div>
+    <!-- 父母邮件 -->
+    <div class="item" id="par-email">
+        <div class="lable">您父母的电子邮件地址:</div>
+        <div class="fill">
+            <input type="text" class="inputbox email">
+            <p class="emphasize tips">
+                可以允许我们处理您的个人信息的父母或法定监护人的电子邮件地址。</br>
+                我们将向他们发送电子邮件，要求他们同意我们使用您的个人信息。您的个人信息将与</br>
+                电子邮件地址的持有人共享。
+            </p>
+        </div>
+    </div>
+    <!-- 接受协议 -->
+    <div class="item">
+        <div class="lable"></div>
+        <div class="fill">
+                <span class="checkbox-span">
+                    <input type="checkbox" name="already_read">&nbsp;我已阅读并接受
+                    <a href="https://www.jetbrains.com/legal/docs/agreements/jetbrains_account/" target="_blank">JetBrains Account</a> 协议
+                </span>
+        </div>
+    </div>
+    <!-- 同意使用 -->
+    <div class="item">
+        <div class="lable"></div>
+        <div class="fill">
+                <span class="checkbox-span">
+                    <input type="checkbox" name="agree_license">&nbsp;我同意在关于我或我的组织持有的 JetBrains 产品或使用的服务的电子邮件通讯中使用我的姓名、
+                        电子邮件地址和位置数据。
+                    <a href="javascript:void(0)" class="more">更多优势</a>
+                </span>
+        </div>
+    </div>
+    <!-- 提交按钮 -->
+    <div class="item">
+        <div class="lable"></div>
+        <div class="fill">
+            <input type="submit" value="申请免费产品" class="button">
+        </div>
+    </div>
+    <!-- github注册方式 -->
+    <div class="item-git" id="git-way">
+        <div class="lable-img">
+            <img src="./image/back.png" alt="">
+        </div>
+        <div class="fill-content">
+            <p>您已经有 GitHub 学生开发者包了吗？<br>如果有，您可以使用 GitHub 帐户申请 JetBrains 工具的免费许可证。</p>
+            <p>我们会将您转到 GitHub 来验证您的学生身份，然后再返回这里来询问一些最终的附加细节。</p>
+            <input type="button" value="通过 GITHUB 授权" class="button">
+            <p><a href="" target="_blank">如果你还没有 GitHub 学生开发者包，请了解更多关于 GitHub 教育</a>的信息。</p>
+        </div>
+    </div>
+</form>
+<footer>
+    <div>
+        Copyright © 2000–2022 JetBrains s.r.o.&nbsp;|
+        <a href="https://sales.jetbrains.com/hc/zh-cn/categories/200934669-JetBrains-Account-Help?_ga=2.111705473.409039832.1646574869-1687676128.1645770472" target="_blank">&nbsp;帮助&nbsp;</a>|
+        <a href="javascript:void(0)">&nbsp;支持&nbsp;</a>|
+        <a href="https://www.jetbrains.com/legal/docs/privacy/privacy/" target="_blank">&nbsp;JetBrains&nbsp;隐私政策&nbsp;</a>|
+        <a href="https://www.jetbrains.com/legal/docs/agreements/jetbrains_account/" target="_blank">&nbsp;JetBrains&nbsp;帐户协议&nbsp;</a>|
+        Build #2022.03-2742
+    </div>
+</footer>
+<script src="./javascript/jquery-3.6.0.js"></script>
+<script src="./javascript/default.js"></script>
+</body>
+</html>
