@@ -15,7 +15,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-@WebServlet(name = "GetVideoList",urlPatterns = "/lists")
+@WebServlet(name = "GetVideoList",urlPatterns = "/api/lists")
 public class GetVideoList extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Statement statement=null;

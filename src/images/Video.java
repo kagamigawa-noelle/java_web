@@ -15,7 +15,7 @@ import java.sql.Statement;
 
 import mysqlConnect.ConnMySQL;
 
-@WebServlet(name="Video",urlPatterns = "/video")
+@WebServlet(name="Video",urlPatterns = "/api/video")
 public class Video extends HttpServlet {
     private static final long serialVersionUID = 1L;
 

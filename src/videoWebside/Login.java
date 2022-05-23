@@ -13,7 +13,7 @@ import java.sql.Statement;
 
 import mysqlConnect.ConnMySQL;
 
-@WebServlet(name = "Login", urlPatterns = "/login")
+@WebServlet(name = "Login", urlPatterns = "/api/login")
 public class Login extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

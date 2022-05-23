@@ -13,7 +13,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-@WebServlet(name = "Search",urlPatterns = "/search")
+@WebServlet(name = "Search",urlPatterns = "/api/search")
 public class Search extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Statement statement=null;

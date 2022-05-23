@@ -13,7 +13,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 @WebServlet(name = "UptateZan" +
-        "", urlPatterns = "/updatezan")
+        "", urlPatterns = "/api/updatezan")
 public class UpdateZan extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

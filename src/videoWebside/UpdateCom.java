@@ -14,7 +14,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 @WebServlet(name = "UptateCom" +
-        "", urlPatterns = "/updatecom")
+        "", urlPatterns = "/api/updatecom")
 public class UpdateCom extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
