@@ -2,10 +2,6 @@ package javaModel.entity;
 
 public class User {
     private String job;
-
-
-
-
     String record;
     String isMain;
     private String email;
@@ -23,6 +19,7 @@ public class User {
     String ageless;
     String isAllow;
     String agree;
+    int id;
 
     public User() {
     }
@@ -126,6 +123,14 @@ public class User {
 
     public String getAgree() {
         return agree;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }
 

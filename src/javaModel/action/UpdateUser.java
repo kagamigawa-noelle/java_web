@@ -11,14 +11,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "PrintTextServlet",value = "/print")
-public class PrintTextServlet extends HttpServlet {
+@WebServlet(name = "UpdateUser",urlPatterns = "/updateuser")
+public class UpdateUser extends HttpServlet {
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse resp) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
+        String id=request.getParameter("id");
         String work=request.getParameter("work");
         String record=request.getParameter("record");
-        String isMain=request.getParameter("isMain").equals("on")?"是":"否";
+        String isMain="on".equals(request.getParameter("isMain"))?"是":"否";//request.getParameter("isMain").equals("on")?"是":"否";
         String email=request.getParameter("email2");
         String firstName=request.getParameter("firstName");
         String lastName=request.getParameter("lastName");
@@ -26,8 +27,8 @@ public class PrintTextServlet extends HttpServlet {
         String birth=request.getParameter("birth");
         String school=request.getParameter("school");
         String webside=request.getParameter("webside");
-        String isN=request.getParameter("isN").equals("on")?"有":"无";
-        String isM=request.getParameter("isM").equals("on")?"是":"否";
+        String isN="on".equals(request.getParameter("isN"))?"是":"否";
+        String isM="on".equals(request.getParameter("isM"))?"是":"否";
         String file=request.getParameter("file");
         String zhengming=request.getParameter("zhengming");
         String yanzheng=request.getParameter("yanzheng");
@@ -36,20 +37,10 @@ public class PrintTextServlet extends HttpServlet {
         String isAllow="on".equals(request.getParameter("isAllow"))?"同意":"不同意";
         String agree="on".equals(request.getParameter("agree"))?"同意":"不同意";
         User user=new User(work,record,isMain,email,lastName+firstName,nation,birth,
-        school,webside,isN,isM,file,zhengming,yanzheng,zhushi,ageless,isAllow,
+                school,webside,isN,isM,file,zhengming,yanzheng,zhushi,ageless,isAllow,
                 agree);
         UserService userService=new UserServiceImpl();
-        response.setContentType("text/html;charset=UTF-8");
-        request.setAttribute("user",user);
-        System.out.println(userService.login(user));
-        if(userService.login(user)//等等验证信息
-        ){
-            System.out.println(user.getName()+"同学提交成功");
-            userService.addUser(user);
-            request.getRequestDispatcher("/welcome.jsp").forward(request,response);
-
-        }
-        else response.sendRedirect("/application.html");
-
+        userService.updateUser(id,user);
+        resp.sendRedirect("/findall");
     }
 }

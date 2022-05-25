@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a href="http://www.baidu.com" id="del">zzzzzz</a>
+<script>
+    var del=document.getElementById("del")
+    del.onclick=function (e) {
+        if(!confirm("真的要删除吗？？不可挽回哦！！")){
+            e.preventDefault()
+        }
+    }
+</script>
+</body>
+</html>
